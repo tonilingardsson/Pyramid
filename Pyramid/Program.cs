@@ -4,10 +4,32 @@
     {
         static void Main(string []args)
         {
+            bool validInput = false;
+            int height = 0;
+
+            while(!validInput) {
             // Asking the user the pyramid size
-            Console.Write("Enter the height of the pyramid and press ENTER: ");
+            Console.Write("Enter the height (a number) of the pyramid and press ENTER: ");
             string userInput = Console.ReadLine();
-            int height = int.Parse(userInput);
+            if (int.TryParse(userInput, out int parsedHeight))
+            {
+                if (parsedHeight > 1 && parsedHeight < 41) 
+                {
+                    validInput = true;
+                    height = parsedHeight;
+                    }
+                 else
+                 {
+                    Console.WriteLine("You need to enter a value between 2 and 40. Try again.");
+                    validInput = false;
+                    }
+                    }
+                 else 
+                 {
+                    Console.WriteLine("You need to enter a number! Try again.");
+                    validInput = false;
+                    }
+            }
             // Build rows
             for (int row = 1; row <= height; row++)
             {
