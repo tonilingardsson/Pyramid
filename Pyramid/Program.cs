@@ -4,13 +4,30 @@
     {
         static void Main(string []args)
         {
+                Console.WriteLine("Welcome to the Pyramid Builder app!");
+                Console.WriteLine("Enter a character to build the pyramid or press ENTER for \"*\": ");
+            string? userString = Console.ReadLine();
+            char pyramidChar;
+            if (string.IsNullOrEmpty(userString))
+            {
+                // User pressed Enter, use the default
+                pyramidChar = '*';
+            }
+            else
+            {
+                // User typed something, use the first charachter
+                pyramidChar = userString[0];
+            }
+
             bool validInput = false;
             int height = 0;
 
             while(!validInput) {
-            // Asking the user the pyramid size
-            Console.Write("Enter the height (a number) of the pyramid and press ENTER: ");
-            string userInput = Console.ReadLine();
+   
+
+            // Now we ask the user the pyramid size
+            Console.WriteLine("Enter the height (a number) of the pyramid and press ENTER: ");
+            string? userInput = Console.ReadLine();
             if (int.TryParse(userInput, out int parsedHeight))
             {
                 if (parsedHeight > 1 && parsedHeight < 41) 
@@ -45,7 +62,10 @@
                     for (int st = 0; st < numberOfStars; st++)
                     {
                         // Print one star per iteration
-                        Console.Write("*"); 
+                        Console.Write(pyramidChar);
+                        // TODO: so the user can choose char
+                        // Console.Write($"{userChar}"); 
+ 
                     }
                 
                 
