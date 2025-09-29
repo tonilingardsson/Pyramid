@@ -57,14 +57,12 @@
                         // Print one space per iteration
                         Console.Write(" "); 
                     }
-                // Step 2: Print the stars for this row                    
+                // Step 2: Print the char for this row                    
                     int numberOfChars = 2*row - 1;
                     for (int st = 0; st < numberOfChars; st++)
                     {
-                        // Print one star per iteration
-                        Console.Write(pyramidChar);
-                        // TODO: so the user can choose char
-                        // Console.Write($"{userChar}"); 
+                        // Print one char per iteration
+                        Console.Write(pyramidChar); 
  
                     }
                 
