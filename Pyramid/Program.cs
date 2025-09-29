@@ -58,8 +58,8 @@
                         Console.Write(" "); 
                     }
                 // Step 2: Print the stars for this row                    
-                    int numberOfStars = 2*row - 1;
-                    for (int st = 0; st < numberOfStars; st++)
+                    int numberOfChars = 2*row - 1;
+                    for (int st = 0; st < numberOfChars; st++)
                     {
                         // Print one star per iteration
                         Console.Write(pyramidChar);
